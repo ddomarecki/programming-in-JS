@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigger {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        Dodaj element listy
+    </button>
+
+    <ul>
+        
+    </ul>
+
+    <script>
+        let counter = 1;
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            const liElement = document.createElement("li");
+            liElement.textContent = counter;
+            if (counter % 3 == 0) {
+                liElement.classList.add("bigger");
+            }
+            document.querySelector("ul").appendChild(liElement);
+            counter += 2;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projekt 1</title>
+    <style>
+        button {
+            display: block;
+            margin: 10px auto;
+        }
+
+        div {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            margin: 5px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border: 2px solid black;
+        }
+
+        .circle {
+            background-color: azure;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Utworz element</button>
+    <script>
+        const btn = document.querySelector("body button");
+        // btn.addEventListener("click", function() {
+        //     console.log("klik!");
+        // })
+        let number = 1;
+        let activeNumber = 1;
+        //iterator/licznik musi być napisany poza funkcją, bo jak się wywoła funkcja to licznik jest kasowany. a poza nią to ona zwiększa go o jeden i zmienia się za każdym wywołaniem funkcji o 1.
+
+        const addElement = function () {
+            // console.log("klik!");
+
+            const div = document.createElement('div');
+            div.textContent = number;
+
+            //    if (number % 5 == 0) {
+            //        div.classList.add("circle");
+            //     }
+
+            if (activeNumber == 5) {
+                activeNumber = 0;
+                div.classList.add("circle");
+            }
+
+                document.body.appendChild(div);
+            //number = number + 1;
+            number++;
+
+            activeNumber++;
+
+        }
+
+
+
+
+        btn.addEventListener("click", addElement);
+    </script>
+</body>
+
+</html>
